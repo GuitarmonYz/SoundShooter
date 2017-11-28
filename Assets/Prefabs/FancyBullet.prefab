@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 135047984489556872}
   m_Layer: 0
   m_Name: FancyBullet
-  m_TagString: Untagged
+  m_TagString: FancyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
