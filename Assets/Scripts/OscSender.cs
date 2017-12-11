@@ -16,6 +16,7 @@ public class OscSender : MonoBehaviour {
 	private int[] rhythmTemplate;
 	private int[] melodyTemplate;
 	private double preTime;
+	private Rigidbody playerBody;
 	void Awake () {
 		osc = GetComponent<Osc>();
 		udp = GetComponent<UDPPacketIO>();
@@ -28,6 +29,7 @@ public class OscSender : MonoBehaviour {
 		preTime = Time.time;
 		OscMList = new ArrayList();
 		osc.Send(Osc.StringToOscMessage("/begin/ "+1));
+		playerBody = player.GetComponent<Rigidbody>();
 		// OscMList.Add(Osc.StringToOscMessage("/bottom/ "+3));
 		// OscMList.Add(Osc.StringToOscMessage("/front/ "+6));
 	}
@@ -36,6 +38,7 @@ public class OscSender : MonoBehaviour {
 	void Update () {
 		//osc.Send(Osc.StringToOscMessage("/bottom/ "+i++));
 		sendPosition();
+		osc.Send(Osc.StringToOscMessage("/velocity/ "+playerBody.velocity.magnitude));
 		if (Time.time > preTime + generateFrequency){
 			if (enemyCounter < 8) {
 				int prob = Random.Range(0,10);	
