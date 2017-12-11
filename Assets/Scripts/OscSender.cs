@@ -14,6 +14,7 @@ public class OscSender : MonoBehaviour {
 	private ArrayList OscMList;
 	private UDPPacketIO udp;
 	private int[] rhythmTemplate;
+	private int[] melodyTemplate;
 	private double preTime;
 	void Awake () {
 		osc = GetComponent<Osc>();
@@ -21,11 +22,12 @@ public class OscSender : MonoBehaviour {
 		udp.init(IPAddress, SendPort, ListenPort);
 		osc.init(udp);
 		rhythmTemplate = new int[8];
+		melodyTemplate = new int[8];
 	}
 	void Start () {
 		preTime = Time.time;
 		OscMList = new ArrayList();
-		
+		osc.Send(Osc.StringToOscMessage("/begin/ "+1));
 		// OscMList.Add(Osc.StringToOscMessage("/bottom/ "+3));
 		// OscMList.Add(Osc.StringToOscMessage("/front/ "+6));
 	}
@@ -70,6 +72,12 @@ public class OscSender : MonoBehaviour {
 	}
 	public void setRhythmTemplate(int idx, int value){
 		this.rhythmTemplate[idx] = value;
+	}
+	public int[] getMelodyTemplate(){
+		return this.melodyTemplate;
+	}
+	public void setMelodyTemplate(int idx, int value){
+		this.melodyTemplate[idx] = value;
 	}
 	public void decreaseEnemy(){
 		this.enemyCounter--;
