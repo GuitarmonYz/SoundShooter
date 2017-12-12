@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
+	public GameObject SequenceEnemy;
+	private GameObject firstSequencePos;
 	private OscSender oscSender;
 	public int speed = 1;
-	private int randPosIdx;
-	private Transform playerPos;
+	private Vector3 targetPosition;
 	private bulletController bulletController;
 	private float[] xArray = new float[]{0,Mathf.Sqrt(2)/2,1,Mathf.Sqrt(2)/2,0,-Mathf.Sqrt(2)/2,-1,-Mathf.Sqrt(2)/2};
 	private float[] yArray = new float[]{1,Mathf.Sqrt(2)/2,0,-Mathf.Sqrt(2)/2,-1,-Mathf.Sqrt(2)/2,0,Mathf.Sqrt(2)/2};
@@ -14,14 +15,15 @@ public class EnemyController : MonoBehaviour {
 	void Start () {
 		GameObject manager = GameObject.FindGameObjectWithTag("Manager");
 		oscSender = manager.GetComponent<OscSender>();
-		GameObject player = GameObject.FindGameObjectWithTag("MyPlayer");
-		playerPos = player.transform;
+		firstSequencePos = GameObject.FindGameObjectWithTag("FirstPos");
+		int seed = Random.Range(0,7);
+		targetPosition = new Vector3(xArray[seed],Random.Range(5,95),yArray[seed]);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float step = speed * Time.deltaTime;
-		transform. position = Vector3. MoveTowards(transform. position, playerPos.position, step);
+		transform. position = Vector3. MoveTowards(transform. position, targetPosition, step);
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -29,7 +31,6 @@ public class EnemyController : MonoBehaviour {
 		Debug.Log("enter");
 		if (other.CompareTag("FancyBullet")){
 			oscSender.decreaseEnemy();
-			DestorySelf();
 			bulletController = other.gameObject.GetComponent<bulletController>();
 			bulletController.getIdx();
 			float posX = this.transform.position.x;
@@ -37,11 +38,22 @@ public class EnemyController : MonoBehaviour {
 			int[] res = findNearest(posX,posZ,15);
 			if (res[1] == 0) {
 				oscSender.setRhythmTemplate(bulletController.getIdx(),res[0]/2+1);
+				Instantiate(SequenceEnemy, getLocation(bulletController.getIdx(), 25f), Quaternion.identity);
 			} else {
 				oscSender.setMelodyTemplate(bulletController.getIdx(),res[0]);
+				Instantiate(SequenceEnemy, getLocation(bulletController.getIdx(),12.5f), Quaternion.identity);
 			}
+			DestorySelf();
 			Destroy(other.gameObject);
 		}
+	}
+
+	Vector3 getLocation(int index, float radius){
+		Vector3 firstSequence = firstSequencePos.transform.position;
+		float rad = Mathf.Acos(firstSequence.x/radius);
+		float degree = rad * Mathf.Rad2Deg;
+		degree = degree + 45.0f * index;
+		return new Vector3(radius*Mathf.Cos(degree*Mathf.Deg2Rad), radius*Mathf.Sin(degree*Mathf.Deg2Rad), 60f);
 	}
 
 	int[] findNearest(float posX, float posZ, float scale){

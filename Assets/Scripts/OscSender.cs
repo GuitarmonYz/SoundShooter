@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
 
 public class OscSender : MonoBehaviour {
@@ -11,7 +11,6 @@ public class OscSender : MonoBehaviour {
 	public int generateFrequency = 2;
 	private int enemyCounter = 0;
 	private Osc osc;
-	private ArrayList OscMList;
 	private UDPPacketIO udp;
 	private int[] rhythmTemplate;
 	private int[] melodyTemplate;
@@ -27,7 +26,6 @@ public class OscSender : MonoBehaviour {
 	}
 	void Start () {
 		preTime = Time.time;
-		OscMList = new ArrayList();
 		osc.Send(Osc.StringToOscMessage("/begin/ "+1));
 		playerBody = player.GetComponent<Rigidbody>();
 		// OscMList.Add(Osc.StringToOscMessage("/bottom/ "+3));
