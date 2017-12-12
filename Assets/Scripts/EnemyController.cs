@@ -16,7 +16,6 @@ public class EnemyController : MonoBehaviour {
 		oscSender = manager.GetComponent<OscSender>();
 		GameObject player = GameObject.FindGameObjectWithTag("MyPlayer");
 		playerPos = player.transform;
-		findPosition();
 	}
 	
 	// Update is called once per frame
@@ -37,7 +36,7 @@ public class EnemyController : MonoBehaviour {
 			float posZ = this.transform.position.z;
 			int[] res = findNearest(posX,posZ,15);
 			if (res[1] == 0) {
-				oscSender.setRhythmTemplate(bulletController.getIdx(),res[0]);
+				oscSender.setRhythmTemplate(bulletController.getIdx(),res[0]/2+1);
 			} else {
 				oscSender.setMelodyTemplate(bulletController.getIdx(),res[0]);
 			}
@@ -50,14 +49,14 @@ public class EnemyController : MonoBehaviour {
 		int res = -1;
 		int type = 0;
 		for(int i = 0; i < xArray.Length; i++){
-			float distance = Mathf.Sqrt(Mathf.Pow((posX-xArray[i]*scale),2)+Mathf.Pow((posZ - yArray[i]*scale),2));
+			float distance = Mathf.Sqrt(Mathf.Pow((posX-xArray[i]*scale*1.5f),2)+Mathf.Pow((posZ - yArray[i]*scale),2));
 			if (distance < minDis){
 				minDis = distance;
 				res = i;
 			}
 		}
 		for(int i = 0; i < xArray.Length; i++){
-			float distance = Mathf.Sqrt(Mathf.Pow((posX-xArray[i]*scale*2),2)+Mathf.Pow((posZ - yArray[i]*scale*2),2));
+			float distance = Mathf.Sqrt(Mathf.Pow((posX-xArray[i]*scale*2.5f),2)+Mathf.Pow((posZ - yArray[i]*scale*2),2));
 			if (distance < minDis){
 				minDis = distance;
 				res = i;
@@ -66,20 +65,8 @@ public class EnemyController : MonoBehaviour {
 		}
 		return new int[]{res,type};
 	}
-
-	void findPosition(){
-		ArrayList unusedposition = new ArrayList();
-		int[] rhythmTemplate = oscSender.getRhythmTemplate();
-		for (int i = 0; i < rhythmTemplate.Length; i++){
-			if (rhythmTemplate[i] == 0) unusedposition.Add(i);
-		}
-		int randPos = Random.Range(0,unusedposition.Count);
-		randPosIdx = (int)unusedposition[randPos];
-		int randValue = Random.Range(1,5);
-		oscSender.setRhythmTemplate(randPosIdx, randValue);
-	}
 	void DestorySelf(){
-		oscSender.setRhythmTemplate(randPosIdx, 0);
+		//oscSender.setRhythmTemplate(randPosIdx, 0);
 		Destroy(this.gameObject);
 	}
 }

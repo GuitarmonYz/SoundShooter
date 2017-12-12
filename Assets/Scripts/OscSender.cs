@@ -36,7 +36,6 @@ public class OscSender : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//osc.Send(Osc.StringToOscMessage("/bottom/ "+i++));
 		sendPosition();
 		osc.Send(Osc.StringToOscMessage("/velocity/ "+playerBody.velocity.magnitude));
 		if (Time.time > preTime + generateFrequency){
@@ -49,14 +48,31 @@ public class OscSender : MonoBehaviour {
 				Debug.Log("generate new");
 			}
 			preTime = Time.time;
-			string tmp = "";
-			foreach (int val in rhythmTemplate){
+			// string tmp = "";
+			// foreach (int val in rhythmTemplate){
+			// 	tmp += (val.ToString()+" ");
+			// }
+			// osc.Send(Osc.StringToOscMessage("/rhythm/ "+tmp));
+			// Debug.Log(tmp);
+			sendSequence(0);
+			sendSequence(1);
+		}
+	}
+
+	void sendSequence(int rhythmOrMelody){
+		string tmp = "";
+		if (rhythmOrMelody == 0){
+			foreach(int val in rhythmTemplate) {
 				tmp += (val.ToString()+" ");
 			}
 			osc.Send(Osc.StringToOscMessage("/rhythm/ "+tmp));
-			Debug.Log(tmp);
+		} else {
+			foreach(int val in melodyTemplate) {
+				tmp += (val.ToString()+" ");
+			}
+			osc.Send(Osc.StringToOscMessage("/melody/ "+tmp));
 		}
-		
+		Debug.Log(tmp);
 	}
 
 	void sendPosition(){
@@ -84,8 +100,5 @@ public class OscSender : MonoBehaviour {
 	}
 	public void decreaseEnemy(){
 		this.enemyCounter--;
-	}
-	void AllMessageHandler (OscMessage oscM) {
-
 	}
 }
