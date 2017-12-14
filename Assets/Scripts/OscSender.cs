@@ -13,23 +13,27 @@ public class OscSender : MonoBehaviour {
 	private Osc osc;
 	private UDPPacketIO udp;
 	private int[] rhythmTemplate;
+	private GameObject[] rhythmObjects;
 	private int[] melodyTemplate;
+	private GameObject[] melodyObjects;
 	private double preTime;
 	private Rigidbody playerBody;
+
+
 	void Awake () {
 		osc = GetComponent<Osc>();
 		udp = GetComponent<UDPPacketIO>();
 		udp.init(IPAddress, SendPort, ListenPort);
 		osc.init(udp);
 		rhythmTemplate = new int[8];
+		rhythmObjects = new GameObject[8];
 		melodyTemplate = new int[8];
+		melodyObjects = new GameObject[8];
 	}
 	void Start () {
 		preTime = Time.time;
 		osc.Send(Osc.StringToOscMessage("/begin/ "+1));
 		playerBody = player.GetComponent<Rigidbody>();
-		// OscMList.Add(Osc.StringToOscMessage("/bottom/ "+3));
-		// OscMList.Add(Osc.StringToOscMessage("/front/ "+6));
 	}
 	
 	// Update is called once per frame
@@ -43,15 +47,9 @@ public class OscSender : MonoBehaviour {
 					Instantiate(enemy, new Vector3(Random.Range(-50,50),Random.Range(0,100),Random.Range(-50,50)),Quaternion.identity);
 					enemyCounter++;
 				} 
-				Debug.Log("generate new");
+				//Debug.Log("generate new");
 			}
 			preTime = Time.time;
-			// string tmp = "";
-			// foreach (int val in rhythmTemplate){
-			// 	tmp += (val.ToString()+" ");
-			// }
-			// osc.Send(Osc.StringToOscMessage("/rhythm/ "+tmp));
-			// Debug.Log(tmp);
 			sendSequence(0);
 			sendSequence(1);
 		}
@@ -64,13 +62,14 @@ public class OscSender : MonoBehaviour {
 				tmp += (val.ToString()+" ");
 			}
 			osc.Send(Osc.StringToOscMessage("/rhythm/ "+tmp));
+			Debug.Log("rhythm: "+tmp);
 		} else {
 			foreach(int val in melodyTemplate) {
 				tmp += (val.ToString()+" ");
 			}
 			osc.Send(Osc.StringToOscMessage("/melody/ "+tmp));
+			Debug.Log("melody: "+tmp);
 		}
-		Debug.Log(tmp);
 	}
 
 	void sendPosition(){
@@ -78,8 +77,6 @@ public class OscSender : MonoBehaviour {
 		osc.Send(Osc.StringToOscMessage("/front/ "+(playerPos.x+50)));
 		osc.Send(Osc.StringToOscMessage("/bottom/ "+playerPos.y));
 		osc.Send(Osc.StringToOscMessage("/left/ "+(playerPos.z+50)));
-		//osc.Send(OscMList);
-		//OscMList.Clear();
 	}
 	public void sendMessage(string msg){
 		osc.Send(Osc.StringToOscMessage(msg));
@@ -98,5 +95,17 @@ public class OscSender : MonoBehaviour {
 	}
 	public void decreaseEnemy(){
 		this.enemyCounter--;
+	}
+	public GameObject getRhythmObject(int idx){
+		return this.rhythmObjects[idx];
+	}
+	public void setRhythmObjects(GameObject rhythmOject, int idx){
+		this.rhythmObjects[idx] = rhythmOject;
+	}
+	public GameObject getMelodyObjects(int idx){
+		return this.melodyObjects[idx];
+	}
+	public void setMelodyObjects(GameObject melodyObject, int idx){
+		this.melodyObjects[idx] = melodyObject;
 	}
 }

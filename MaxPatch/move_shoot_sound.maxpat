@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 103.0, 1372.0, 702.0 ],
+		"rect" : [ 34.0, 99.0, 1372.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,14 +38,48 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1212.0, 11.0, 72.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"extract" : 1,
+					"id" : "obj-16",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bp.Stereo.maxpat",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 141.0, 1675.0, 148.0, 116.0 ],
+					"varname" : "bp.Stereo[2]",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-30",
 					"maxclass" : "newobj",
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.0, 507.0, 112.0, 22.0 ],
+					"patching_rect" : [ 360.0, 507.0, 99.0, 22.0 ],
 					"style" : "",
-					"text" : "scale 0. 18. 0.4 2.5"
+					"text" : "scale 0. 18. 0. 3."
 				}
 
 			}
@@ -56,7 +90,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 394.0, 626.5, 174.0, 22.0 ],
+					"patching_rect" : [ 360.0, 564.5, 174.0, 22.0 ],
 					"style" : "",
 					"text" : "pattrforward LFOCV::FreqRate"
 				}
@@ -110,7 +144,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 323.0, 190.0, 50.0, 22.0 ],
+					"patching_rect" : [ 324.0, 187.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -440,7 +474,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 509.0, 1755.0, 148.0, 116.0 ],
+					"patching_rect" : [ 696.0, 1681.0, 148.0, 116.0 ],
 					"varname" : "bp.Stereo[1]",
 					"viewvisibility" : 1
 				}
@@ -479,9 +513,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 807.5, 516.0, 61.5, 22.0 ],
+					"patching_rect" : [ 807.5, 511.0, 75.5, 22.0 ],
 					"style" : "",
-					"text" : "19.35474"
+					"text" : "60.921841"
 				}
 
 			}
@@ -1150,7 +1184,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 850.0, 105.0, 72.0, 22.0 ],
+					"patching_rect" : [ 864.0, 105.0, 72.0, 22.0 ],
 					"style" : "",
 					"text" : "route /front/"
 				}
@@ -1165,7 +1199,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 850.0, 216.0, 50.0, 22.0 ],
+					"patching_rect" : [ 864.0, 216.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1288,7 +1322,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "float" ],
 					"patching_rect" : [ 141.0, 639.5, 56.0, 22.0 ],
-					"sig" : -1.155556,
+					"sig" : -1.6076,
 					"style" : ""
 				}
 
@@ -1398,13 +1432,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-77", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
@@ -1461,6 +1488,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-23", 0 ],
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-27", 0 ]
 				}
@@ -1482,14 +1516,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 1 ],
+					"destination" : [ "obj-16", 1 ],
 					"source" : [ "obj-29", 1 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -1986,101 +2020,105 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-1::obj-88" : [ "Time Mode", "Time Mode", 1 ],
-			"obj-44::obj-331" : [ "WaveformCloud", "Waveform", 0 ],
-			"obj-44::obj-45" : [ "TimeMode", "TimeMode", 1 ],
-			"obj-24" : [ "number[11]", "number[11]", 0 ],
-			"obj-19::obj-20" : [ "mute", "mute", 0 ],
-			"obj-14::obj-52" : [ "Level[1]", "Level", 0 ],
-			"obj-69" : [ "number[17]", "number[17]", 0 ],
-			"obj-17" : [ "number[15]", "number[15]", 0 ],
-			"obj-27::obj-137" : [ "Feedback", "Feedback", 0 ],
-			"obj-27::obj-51" : [ "Freq", "Freq", 0 ],
-			"obj-28::obj-23" : [ "bypass", "bypass", 0 ],
-			"obj-29::obj-66" : [ "Time", "Time", 0 ],
-			"obj-36::obj-1" : [ "Attack", "Attack", 0 ],
-			"obj-29::obj-62" : [ "Dry", "Dry", 0 ],
-			"obj-93::obj-28" : [ "Size[1]", "Size", 0 ],
-			"obj-44::obj-107" : [ "Linear", "Linear", 0 ],
-			"obj-80::obj-89" : [ "FreqRate[1]", "Rate", 0 ],
-			"obj-80::obj-88" : [ "Time Mode[1]", "Time Mode", 1 ],
-			"obj-1::obj-81" : [ "Phase-Inversion", "Phase-Inversion", 1 ],
-			"obj-44::obj-106" : [ "CV3", "CV3", 0 ],
-			"obj-68" : [ "number[18]", "number[18]", 0 ],
-			"obj-14::obj-56" : [ "OutputChannel[1]", "OutputChannel", 0 ],
-			"obj-27::obj-118" : [ "Mix", "Mix", 0 ],
-			"obj-44::obj-24" : [ "Freq[1]", "Freq", 0 ],
-			"obj-35" : [ "number[14]", "number[14]", 0 ],
-			"obj-94::obj-12" : [ "Mute[8]", "Mute", 0 ],
-			"obj-19::obj-91" : [ "Offset", "Offset", 0 ],
-			"obj-93::obj-60" : [ "Damp[1]", "Damp", 0 ],
-			"obj-36::obj-29" : [ "Decay", "Decay", 0 ],
-			"obj-28::obj-2" : [ "Rate", "Rate", 0 ],
-			"obj-29::obj-63" : [ "Early", "Early", 0 ],
-			"obj-93::obj-64" : [ "Tail[1]", "Tail", 0 ],
-			"obj-1::obj-12" : [ "Mute", "Mute", 0 ],
-			"obj-80::obj-70" : [ "Amt[2]", "CV Amt", 0 ],
-			"obj-27::obj-42" : [ "Invert", "Invert", 0 ],
-			"obj-27::obj-7" : [ "Bypass", "Bypass", 0 ],
-			"obj-44::obj-51" : [ "Fatness", "Fatness", 0 ],
-			"obj-1::obj-75" : [ "Shape", "Shape", 0 ],
-			"obj-19::obj-56" : [ "Depth", "Depth", 0 ],
-			"obj-66" : [ "number[19]", "number[19]", 0 ],
-			"obj-58::obj-12" : [ "Mute[4]", "Mute", 0 ],
-			"obj-27::obj-56" : [ "Offset[1]", "Offset", 0 ],
-			"obj-28::obj-1" : [ "Width", "Width", 0 ],
-			"obj-14::obj-55" : [ "DSP[1]", "DSP", 0 ],
-			"obj-29::obj-3" : [ "Regen[1]", "Regen", 0 ],
-			"obj-1::obj-94" : [ "Re-Trigger", "Re-Trigger", 0 ],
-			"obj-44::obj-20" : [ "Mute[9]", "Mute", 0 ],
-			"obj-95" : [ "number[22]", "number[22]", 0 ],
-			"obj-20" : [ "number[13]", "number[13]", 0 ],
-			"obj-93::obj-66" : [ "Time[1]", "Time", 0 ],
-			"obj-36::obj-15" : [ "Legato", "Legato", 0 ],
-			"obj-71::obj-22" : [ "CV", "CV", 0 ],
+			"obj-1::obj-89" : [ "FreqRate", "Rate", 0 ],
 			"obj-28::obj-3" : [ "Regen", "Regen", 0 ],
-			"obj-93::obj-62" : [ "Dry[1]", "Dry", 0 ],
-			"obj-89" : [ "number[6]", "number[6]", 0 ],
+			"obj-44::obj-45" : [ "TimeMode", "TimeMode", 1 ],
+			"obj-95" : [ "number[22]", "number[22]", 0 ],
+			"obj-1::obj-94" : [ "Re-Trigger", "Re-Trigger", 0 ],
+			"obj-93::obj-63" : [ "Early[1]", "Early", 0 ],
+			"obj-27::obj-7" : [ "Bypass", "Bypass", 0 ],
+			"obj-36::obj-1" : [ "Attack", "Attack", 0 ],
+			"obj-1::obj-75" : [ "Shape", "Shape", 0 ],
+			"obj-80::obj-70" : [ "Amt[2]", "CV Amt", 0 ],
+			"obj-19::obj-86" : [ "Amt[1]", "Amt", 0 ],
+			"obj-44::obj-46" : [ "Offset[2]", "Offset", 0 ],
 			"obj-80::obj-144" : [ "Phase[1]", "Phase", 0 ],
-			"obj-80::obj-81" : [ "Phase-Inversion[1]", "Phase-Inversion", 1 ],
+			"obj-29::obj-66" : [ "Time", "Time", 0 ],
 			"obj-1::obj-144" : [ "Phase", "Phase", 0 ],
-			"obj-27::obj-55" : [ "FreqMode", "FreqMode", 0 ],
-			"obj-75::obj-55" : [ "Bypass[1]", "Bypass", 0 ],
+			"obj-19::obj-56" : [ "Depth", "Depth", 0 ],
+			"obj-16::obj-52" : [ "Level", "Level", 0 ],
+			"obj-44::obj-107" : [ "Linear", "Linear", 0 ],
+			"obj-58::obj-12" : [ "Mute[4]", "Mute", 0 ],
+			"obj-16::obj-55" : [ "DSP", "DSP", 0 ],
+			"obj-14::obj-56" : [ "OutputChannel[1]", "OutputChannel", 0 ],
+			"obj-1::obj-81" : [ "Phase-Inversion", "Phase-Inversion", 1 ],
+			"obj-29::obj-65" : [ "Spread", "Spread", 0 ],
+			"obj-89" : [ "number[6]", "number[6]", 0 ],
+			"obj-93::obj-66" : [ "Time[1]", "Time", 0 ],
+			"obj-50" : [ "number[16]", "number[16]", 0 ],
+			"obj-93::obj-60" : [ "Damp[1]", "Damp", 0 ],
+			"obj-24" : [ "number[11]", "number[11]", 0 ],
+			"obj-16::obj-22" : [ "Mute[10]", "Mute", 0 ],
+			"obj-28::obj-2" : [ "Rate", "Rate", 0 ],
+			"obj-36::obj-29" : [ "Decay", "Decay", 0 ],
 			"obj-75::obj-33" : [ "Quadrants", "Quadrants", 0 ],
+			"obj-71::obj-1" : [ "Fade", "Fade", 0 ],
+			"obj-27::obj-14" : [ "CV2", "CV2", 0 ],
+			"obj-80::obj-12" : [ "Mute[6]", "Mute", 0 ],
+			"obj-37" : [ "number[8]", "number[8]", 0 ],
+			"obj-44::obj-331" : [ "WaveformCloud", "Waveform", 0 ],
+			"obj-69" : [ "number[17]", "number[17]", 0 ],
 			"obj-19::obj-80" : [ "Ratio", "Ratio", 0 ],
+			"obj-1::obj-12" : [ "Mute", "Mute", 0 ],
+			"obj-29::obj-60" : [ "Damp", "Damp", 0 ],
 			"obj-14::obj-22" : [ "Mute[3]", "Mute", 0 ],
+			"obj-88" : [ "number[7]", "number[7]", 0 ],
+			"obj-28::obj-28" : [ "Center", "Center", 0 ],
+			"obj-29::obj-64" : [ "Tail", "Tail", 0 ],
+			"obj-27::obj-51" : [ "Freq", "Freq", 0 ],
+			"obj-93::obj-62" : [ "Dry[1]", "Dry", 0 ],
+			"obj-93::obj-65" : [ "Spread[1]", "Spread", 0 ],
+			"obj-17" : [ "number[15]", "number[15]", 0 ],
+			"obj-28::obj-1" : [ "Width", "Width", 0 ],
+			"obj-80::obj-89" : [ "FreqRate[1]", "Rate", 0 ],
+			"obj-36::obj-15" : [ "Legato", "Legato", 0 ],
+			"obj-75::obj-80" : [ "Response", "Response", 0 ],
+			"obj-58::obj-20" : [ "Frequency", "Freq", 0 ],
+			"obj-44::obj-106" : [ "CV3", "CV3", 0 ],
+			"obj-80::obj-75" : [ "Shape[1]", "Shape", 0 ],
+			"obj-68" : [ "number[18]", "number[18]", 0 ],
+			"obj-44::obj-20" : [ "Mute[9]", "Mute", 0 ],
+			"obj-94::obj-12" : [ "Mute[8]", "Mute", 0 ],
+			"obj-71::obj-41" : [ "bypass[2]", "bypass", 0 ],
+			"obj-16::obj-56" : [ "OutputChannel", "OutputChannel", 0 ],
+			"obj-29::obj-62" : [ "Dry", "Dry", 0 ],
+			"obj-14::obj-52" : [ "Level[1]", "Level", 0 ],
+			"obj-29::obj-28" : [ "Size", "Size", 0 ],
+			"obj-19::obj-20" : [ "mute", "mute", 0 ],
+			"obj-93::obj-3" : [ "Regen[2]", "Regen", 0 ],
+			"obj-27::obj-137" : [ "Feedback", "Feedback", 0 ],
+			"obj-93::obj-23" : [ "bypass[3]", "bypass", 0 ],
+			"obj-71::obj-22" : [ "CV", "CV", 0 ],
+			"obj-28::obj-23" : [ "bypass", "bypass", 0 ],
+			"obj-80::obj-81" : [ "Phase-Inversion[1]", "Phase-Inversion", 1 ],
+			"obj-36::obj-31" : [ "Release", "Release", 0 ],
+			"obj-66" : [ "number[19]", "number[19]", 0 ],
+			"obj-35" : [ "number[14]", "number[14]", 0 ],
+			"obj-44::obj-51" : [ "Fatness", "Fatness", 0 ],
+			"obj-80::obj-94" : [ "Re-Trigger[1]", "Re-Trigger", 0 ],
+			"obj-27::obj-56" : [ "Offset[1]", "Offset", 0 ],
+			"obj-1::obj-88" : [ "Time Mode", "Time Mode", 1 ],
 			"obj-29::obj-23" : [ "bypass[1]", "bypass", 0 ],
 			"obj-44::obj-129" : [ "CV2[1]", "CV2", 0 ],
-			"obj-71::obj-1" : [ "Fade", "Fade", 0 ],
-			"obj-94::obj-20" : [ "Frequency[1]", "Freq", 0 ],
-			"obj-37" : [ "number[8]", "number[8]", 0 ],
-			"obj-93::obj-65" : [ "Spread[1]", "Spread", 0 ],
-			"obj-36::obj-31" : [ "Release", "Release", 0 ],
-			"obj-58::obj-20" : [ "Frequency", "Freq", 0 ],
-			"obj-50" : [ "number[16]", "number[16]", 0 ],
-			"obj-88" : [ "number[7]", "number[7]", 0 ],
-			"obj-29::obj-65" : [ "Spread", "Spread", 0 ],
-			"obj-93::obj-3" : [ "Regen[2]", "Regen", 0 ],
-			"obj-80::obj-94" : [ "Re-Trigger[1]", "Re-Trigger", 0 ],
-			"obj-80::obj-74" : [ "SyncRate[1]", "Rate", 0 ],
+			"obj-14::obj-55" : [ "DSP[1]", "DSP", 0 ],
 			"obj-1::obj-70" : [ "Amt", "CV Amt", 0 ],
+			"obj-29::obj-63" : [ "Early", "Early", 0 ],
 			"obj-1::obj-74" : [ "SyncRate", "Rate", 0 ],
-			"obj-44::obj-46" : [ "Offset[2]", "Offset", 0 ],
-			"obj-75::obj-80" : [ "Response", "Response", 0 ],
-			"obj-71::obj-41" : [ "bypass[2]", "bypass", 0 ],
-			"obj-19::obj-86" : [ "Amt[1]", "Amt", 0 ],
-			"obj-28::obj-28" : [ "Center", "Center", 0 ],
-			"obj-29::obj-60" : [ "Damp", "Damp", 0 ],
-			"obj-93::obj-23" : [ "bypass[3]", "bypass", 0 ],
+			"obj-93::obj-28" : [ "Size[1]", "Size", 0 ],
+			"obj-27::obj-118" : [ "Mix", "Mix", 0 ],
+			"obj-93::obj-64" : [ "Tail[1]", "Tail", 0 ],
+			"obj-80::obj-88" : [ "Time Mode[1]", "Time Mode", 1 ],
 			"obj-36::obj-32" : [ "Sustain", "Sustain", 0 ],
-			"obj-29::obj-64" : [ "Tail", "Tail", 0 ],
-			"obj-93::obj-63" : [ "Early[1]", "Early", 0 ],
-			"obj-80::obj-75" : [ "Shape[1]", "Shape", 0 ],
-			"obj-80::obj-12" : [ "Mute[6]", "Mute", 0 ],
-			"obj-1::obj-89" : [ "FreqRate", "Rate", 0 ],
-			"obj-27::obj-14" : [ "CV2", "CV2", 0 ],
-			"obj-29::obj-28" : [ "Size", "Size", 0 ],
-			"obj-36::obj-20" : [ "Mute[7]", "Mute", 0 ]
+			"obj-27::obj-55" : [ "FreqMode", "FreqMode", 0 ],
+			"obj-80::obj-74" : [ "SyncRate[1]", "Rate", 0 ],
+			"obj-20" : [ "number[13]", "number[13]", 0 ],
+			"obj-27::obj-42" : [ "Invert", "Invert", 0 ],
+			"obj-36::obj-20" : [ "Mute[7]", "Mute", 0 ],
+			"obj-29::obj-3" : [ "Regen[1]", "Regen", 0 ],
+			"obj-75::obj-55" : [ "Bypass[1]", "Bypass", 0 ],
+			"obj-44::obj-24" : [ "Freq[1]", "Freq", 0 ],
+			"obj-94::obj-20" : [ "Frequency[1]", "Freq", 0 ],
+			"obj-19::obj-91" : [ "Offset", "Offset", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -2172,7 +2210,8 @@
 		"styles" : [ 			{
 				"name" : "Manuel1",
 				"default" : 				{
-					"fontname" : [ "Arial Bold" ],
+					"fontface" : [ 0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -2182,8 +2221,7 @@
 						"proportion" : 0.39
 					}
 ,
-					"fontface" : [ 0 ],
-					"fontsize" : [ 10.0 ]
+					"fontname" : [ "Arial Bold" ]
 				}
 ,
 				"parentstyle" : "",

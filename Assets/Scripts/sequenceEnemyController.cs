@@ -15,15 +15,15 @@ public class sequenceEnemyController : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("enter");
+		//Debug.Log("enter");
 		if (other.CompareTag("FancyBullet")){
 			if (sequencePos[1] == 0) {
 				oscSender.setRhythmTemplate(sequencePos[0],0);
 			} else {
 				oscSender.setMelodyTemplate(sequencePos[0],0);
 			}
-			DestorySelf();
 			Destroy(other.gameObject);
+			DestorySelf();
 		}
 	}
 	void DestorySelf(){

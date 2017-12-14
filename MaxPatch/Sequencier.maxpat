@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 284.0, 79.0, 1233.0, 701.0 ],
+		"rect" : [ 173.0, 79.0, 1233.0, 701.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,59 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-49",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 705.0, 1100.5, 72.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-47",
+					"linecount" : 3,
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 20.75, 368.5, 65.25, 49.0 ],
+					"style" : "",
+					"text" : "if $i1 == 0 then -48 else $i1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 197.633972, 382.0, 79.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess 44"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 835.0, 27.0, 92.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess 1000"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-51",
 					"maxclass" : "button",
@@ -67,7 +120,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 159.267944, 362.0, 24.0, 24.0 ],
+					"patching_rect" : [ 188.633972, 348.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -79,7 +132,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 111.0, 364.0, 29.5, 22.0 ],
+					"patching_rect" : [ 97.25, 382.0, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "46"
 				}
@@ -170,6 +223,19 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 288.0, 19.0, 72.0, 22.0 ],
+									"style" : "",
+									"text" : "loadmess 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-5",
@@ -322,21 +388,21 @@
 												"filekind" : "audiofile",
 												"loop" : 0,
 												"content_state" : 												{
-													"basictuning" : [ 440 ],
-													"slurtime" : [ 0.0 ],
 													"followglobaltempo" : [ 0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"formantcorrection" : [ 0 ],
-													"formant" : [ 1.0 ],
-													"speed" : [ 1.0 ],
-													"originaltempo" : [ 120.0 ],
-													"mode" : [ "basic" ],
 													"originallengthms" : [ 0.0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"timestretch" : [ 0 ],
-													"quality" : [ "basic" ],
+													"speed" : [ 1.0 ],
+													"play" : [ 0 ],
+													"formantcorrection" : [ 0 ],
 													"pitchcorrection" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"formant" : [ 1.0 ],
+													"quality" : [ "basic" ],
 													"pitchshift" : [ 1.0 ],
-													"play" : [ 0 ]
+													"slurtime" : [ 0.0 ],
+													"originaltempo" : [ 120.0 ],
+													"mode" : [ "basic" ]
 												}
 
 											}
@@ -362,21 +428,21 @@
 												"filekind" : "audiofile",
 												"loop" : 0,
 												"content_state" : 												{
-													"basictuning" : [ 440 ],
-													"slurtime" : [ 0.0 ],
 													"followglobaltempo" : [ 0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"formantcorrection" : [ 0 ],
-													"formant" : [ 1.0 ],
-													"speed" : [ 1.0 ],
-													"originaltempo" : [ 120.0 ],
-													"mode" : [ "basic" ],
 													"originallengthms" : [ 0.0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"timestretch" : [ 0 ],
-													"quality" : [ "basic" ],
+													"speed" : [ 1.0 ],
+													"play" : [ 0 ],
+													"formantcorrection" : [ 0 ],
 													"pitchcorrection" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"formant" : [ 1.0 ],
+													"quality" : [ "basic" ],
 													"pitchshift" : [ 1.0 ],
-													"play" : [ 0 ]
+													"slurtime" : [ 0.0 ],
+													"originaltempo" : [ 120.0 ],
+													"mode" : [ "basic" ]
 												}
 
 											}
@@ -402,21 +468,21 @@
 												"filekind" : "audiofile",
 												"loop" : 0,
 												"content_state" : 												{
-													"basictuning" : [ 440 ],
-													"slurtime" : [ 0.0 ],
 													"followglobaltempo" : [ 0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"formantcorrection" : [ 0 ],
-													"formant" : [ 1.0 ],
-													"speed" : [ 1.0 ],
-													"originaltempo" : [ 120.0 ],
-													"mode" : [ "basic" ],
 													"originallengthms" : [ 0.0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"timestretch" : [ 0 ],
-													"quality" : [ "basic" ],
+													"speed" : [ 1.0 ],
+													"play" : [ 0 ],
+													"formantcorrection" : [ 0 ],
 													"pitchcorrection" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"formant" : [ 1.0 ],
+													"quality" : [ "basic" ],
 													"pitchshift" : [ 1.0 ],
-													"play" : [ 0 ]
+													"slurtime" : [ 0.0 ],
+													"originaltempo" : [ 120.0 ],
+													"mode" : [ "basic" ]
 												}
 
 											}
@@ -442,21 +508,21 @@
 												"filekind" : "audiofile",
 												"loop" : 0,
 												"content_state" : 												{
-													"basictuning" : [ 440 ],
-													"slurtime" : [ 0.0 ],
 													"followglobaltempo" : [ 0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"formantcorrection" : [ 0 ],
-													"formant" : [ 1.0 ],
-													"speed" : [ 1.0 ],
-													"originaltempo" : [ 120.0 ],
-													"mode" : [ "basic" ],
 													"originallengthms" : [ 0.0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"timestretch" : [ 0 ],
-													"quality" : [ "basic" ],
+													"speed" : [ 1.0 ],
+													"play" : [ 0 ],
+													"formantcorrection" : [ 0 ],
 													"pitchcorrection" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"formant" : [ 1.0 ],
+													"quality" : [ "basic" ],
 													"pitchshift" : [ 1.0 ],
-													"play" : [ 0 ]
+													"slurtime" : [ 0.0 ],
+													"originaltempo" : [ 120.0 ],
+													"mode" : [ "basic" ]
 												}
 
 											}
@@ -475,6 +541,38 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"order" : 3,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-52", 0 ],
+									"order" : 2,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-56", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-57", 0 ],
+									"order" : 0,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
 									"order" : 3,
@@ -623,6 +721,7 @@
 								"name" : "Manuel1",
 								"default" : 								{
 									"fontface" : [ 0 ],
+									"fontsize" : [ 10.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -632,7 +731,6 @@
 										"proportion" : 0.39
 									}
 ,
-									"fontsize" : [ 10.0 ],
 									"fontname" : [ "Arial Bold" ]
 								}
 ,
@@ -52364,7 +52462,7 @@
 						"amp-lfo-range" : [ 0.0 ],
 						"amp-lfo-wave" : [ "sine" ],
 						"carrier-wave" : [ "tri" ],
-						"gain" : [ 0.0 ],
+						"gain" : [ 7.266094 ],
 						"harm-depth" : [ 12.0 ],
 						"harm-env" : [ 1.0, 0.0 ],
 						"harm-env-max" : [ 1.0 ],
@@ -52373,7 +52471,7 @@
 						"harm-lfo-freq" : [ 0.0 ],
 						"harm-lfo-range" : [ 36.0 ],
 						"harm-lfo-wave" : [ "noise" ],
-						"live.gain~" : [ 0.0 ],
+						"live.gain~" : [ -2.703462 ],
 						"mod-depth" : [ 9.0 ],
 						"mod-env" : [ 1.0, 0.0 ],
 						"mod-env-max" : [ 1.0 ],
@@ -52410,7 +52508,7 @@
 					"style" : "",
 					"text" : "autopattr @autorestore 0 @dirty 0",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"varname" : "u737004680"
+					"varname" : "u741003113"
 				}
 
 			}
@@ -53115,7 +53213,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 62.0, 228.0, 87.0, 22.0 ],
 					"style" : "",
-					"text" : "0 7 4 0 0 0 0 0"
+					"text" : "0 0 0 7 0 0 4 1"
 				}
 
 			}
@@ -53347,7 +53445,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 495.75, 306.0, 87.0, 22.0 ],
 					"style" : "",
-					"text" : "0 1 1 0 0 1 0 0"
+					"text" : "0 0 0 0 4 0 3 0"
 				}
 
 			}
@@ -53387,7 +53485,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 959.0, 432.5, 121.0, 48.0 ],
-					"presentation_rect" : [ 30.0, 30.0, 50.0, 48.0 ],
+					"presentation_rect" : [ 30.0, 30.0, 50.0, 34.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "live.gain~",
@@ -55155,7 +55253,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
+					"destination" : [ "obj-47", 0 ],
 					"source" : [ "obj-321", 0 ]
 				}
 
@@ -55342,8 +55440,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
 					"source" : [ "obj-48", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-49", 0 ]
 				}
 
 			}
@@ -55528,6 +55640,13 @@
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"destination" : [ "obj-206", 0 ],
 					"source" : [ "obj-69", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
@@ -55718,6 +55837,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-313", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"destination" : [ "obj-108", 0 ],
 					"source" : [ "obj-90", 0 ]
@@ -55864,6 +55990,7 @@
 				"name" : "Manuel1",
 				"default" : 				{
 					"fontface" : [ 0 ],
+					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -55873,7 +56000,6 @@
 						"proportion" : 0.39
 					}
 ,
-					"fontsize" : [ 10.0 ],
 					"fontname" : [ "Arial Bold" ]
 				}
 ,

@@ -9,7 +9,7 @@ public class bulletController : MonoBehaviour {
 		return this.idx;
 	}
 	void Update(){
-		if (Mathf.Abs(transform.position.x) > 60f || Mathf.Abs(transform.position.z) > 60f) {
+		if (Mathf.Abs(transform.position.x) > 80f || Mathf.Abs(transform.position.z) > 80f) {
 			Destroy(this.gameObject);
 		}
 	}
