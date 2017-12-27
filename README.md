@@ -26,5 +26,6 @@ https://cycling74.com/downloads
 
 The volume of each sound engine may need to be manully adjusted to create better sound experience.
 
+**Interface Preview**
 
-
+![demo](https://github.com/GuitarmonYz/SoundShooter/blob/master/demo.gif?raw=true)
